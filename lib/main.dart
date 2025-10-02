@@ -1,8 +1,12 @@
+// main.dart
+
 import 'package:flutter/material.dart';
 import 'form_mahasiswa.dart';
 import 'daftar_mahasiswa.dart';
 import 'tentang_aplikasi.dart';
 import 'pengaturan.dart';
+import 'form_dosen.dart'; // Impor file form_dosen.dart yang baru
+import 'form_matkul.dart'; // Impor file form_matkul.dart yang baru
 
 void main() => runApp(const MyApp());
 
@@ -44,6 +48,22 @@ class HomePage extends StatelessWidget {
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (_) => const FormMahasiswaPage()));
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.person_outline),
+              title: const Text('Form Dosen'), // Menu baru untuk Dosen
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const FormDosenPage()));
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.class_),
+              title: const Text('Form Mata Kuliah'), // Menu baru untuk Mata Kuliah
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const FormMatkulPage()));
               },
             ),
             ListTile(
